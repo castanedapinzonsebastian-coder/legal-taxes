@@ -268,3 +268,36 @@ article.team small{color:#bfc3c9}
   .team-grid{ grid-template-columns: 1fr; }
   .portrait-card{ --w: 92vw; }
 }
+.topbar-right {
+  display: flex;
+  flex-direction: column;   /* vertical */
+  gap: .6rem;
+  align-items: flex-end;
+}
+
+.social-icon {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  transition: .25s;
+  font-size: .8rem;
+}
+
+.social-icon:hover {
+  background: #d4af37;
+  color: #0f0f0f;
+  border-color: #d4af37;
+}
+
+/* móvil: horizontales */
+@media (max-width: 768px) {
+  .topbar-right {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
