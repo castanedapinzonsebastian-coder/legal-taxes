@@ -1,0 +1,270 @@
+/* =======================
+   Variables y base
+======================= */
+:root{
+  --bg:#0b0b0b;
+  --surface-1:#151515;
+  --surface-2:#232323;
+  --surface-3:#333333;
+
+  --text:#e8e8e8;
+  --muted:#a3a3a3;
+  --border:#2b2b2b;
+
+  --accent:#d9d9d9;
+  --wa-green:#25D366;
+  --wa-dark:#128C7E;
+
+  --shadow:0 10px 25px rgba(0,0,0,.35);
+  --radius:14px;
+
+  /* Equipo (retrato sin marco) */
+  --portrait-w: 180px;          /* ⟵ ancho del retrato en escritorio */
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+  color:var(--text); background:var(--bg); line-height:1.5;
+}
+
+.container{width:min(1120px,92%);margin:auto}
+
+/* =======================
+   Topbar
+======================= */
+.topbar{background:var(--surface-3);color:#fff;font-size:.9rem}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;padding:.45rem 0}
+.topbar a{color:#fff;text-decoration:none}
+.topbar-left span{margin-right:.5rem}
+.topbar-right .social{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.5);margin-left:.35rem;font-size:.75rem
+}
+
+/* =======================
+   Header / Nav
+======================= */
+.header{background:var(--surface-1);box-shadow:var(--shadow);position:sticky;top:0;z-index:20}
+.nav{display:flex;align-items:center;gap:1rem;padding:.8rem 0}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--text);font-weight:700}
+.logo-text{white-space:nowrap}
+.nav-toggle{display:none;border:none;background:transparent;font-size:1.4rem;color:var(--text)}
+.menu ul{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.menu a{color:var(--text);text-decoration:none;padding:.75rem .6rem;border-radius:10px}
+.menu a:hover{background:rgba(255,255,255,.06)}
+.llamenos a{font-weight:700;color:var(--accent)}
+
+/* Dropdown por clic (sin hover) */
+.has-dropdown{position:relative}
+.dropdown-btn{background:transparent;border:none;color:var(--text);padding:.75rem .6rem;border-radius:10px;cursor:pointer}
+.dropdown{
+  position:absolute;left:0;top:100%;
+  background:var(--surface-2);border:1px solid var(--border);border-radius:12px;
+  box-shadow:var(--shadow);padding:.35rem 0;min-width:240px;display:none;z-index:50;
+}
+.dropdown li a{display:block;padding:.7rem 1rem;color:var(--text)}
+.menu .has-dropdown > .dropdown{display:none!important}
+.menu .has-dropdown.active > .dropdown{display:block!important}
+.menu .has-dropdown:hover > .dropdown,
+.menu .has-dropdown:focus-within > .dropdown{display:none!important}
+
+/* Accesibilidad visual */
+.dropdown-btn:focus-visible,
+.menu a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* =======================
+   Hero con video
+======================= */
+.hero{position:relative;min-height:56vh;overflow:hidden;background:#000}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.65));z-index:1}
+.hero-content{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;min-height:inherit;padding:48px 0}
+.hero p{color:#e0e0e0;max-width:720px;margin:0}
+.hero-dots{margin-top:1rem}
+.hero-dots span{display:inline-block;width:10px;height:10px;border-radius:50%;background:#ddd;margin-right:6px;opacity:.9}
+
+/* Título dorado */
+.hero-title{
+  font-family:"Times New Roman", Georgia, serif;
+  font-weight:700; letter-spacing:.5px;
+  background:linear-gradient(180deg,#F6E27A 0%, #E7C34B 40%, #D9A73A 60%, #B6822E 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent !important;
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.45));
+}
+
+/* =======================
+   Secciones y tarjetas
+======================= */
+.section{padding:64px 0;background:var(--surface-1)}
+.section.alt{background:var(--surface-2)}
+.section h2{margin:0 0 .5rem 0;font-size:clamp(22px,2.8vw,32px)}
+.section .lead{color:var(--muted);margin-bottom:1.25rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card,.pill,.post,.contact-form,.contact-info{
+  background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px
+}
+.pill{border-left:5px solid var(--surface-3)}
+.post .link{color:var(--accent);text-decoration:none;font-weight:600}
+
+/* =======================
+   Equipo (sin tarjetas oscuras)
+======================= */
+#equipo .grid-3{
+  grid-template-columns:repeat(3,minmax(260px,1fr));
+  justify-items:center;align-items:start;
+}
+
+/* Tarjeta mínima (sin fondo/sombra) */
+article.team{
+  background:transparent!important; box-shadow:none!important; border:0!important;
+  padding:12px 0 18px!important; text-align:center;
+}
+
+/* Placeholder circular para quienes no tienen foto */
+.avatar.placeholder{
+  width:220px;height:220px;margin:0 auto 14px;border-radius:50%;
+  background:#1e1e1e;color:#e6e6e6;display:flex;align-items:center;justify-content:center;
+  font-weight:700;box-shadow:0 6px 22px rgba(0,0,0,.18); filter:saturate(.6) brightness(.9);
+}
+
+/* Retrato SIN marco (solo la foto, completa) */
+.avatar.portrait{
+  width: var(--portrait-w);
+  aspect-ratio: 3 / 4;          /* proporción vertical */
+  margin: 0 auto 14px;
+
+  /* sin marco/sombra/fondo */
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;             /* seguridad ante desbordes */
+}
+
+/* La imagen se muestra COMPLETA (no se recorta) */
+.avatar.portrait img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;          /* foto entera */
+  object-position: center top;  /* o center center si lo prefieres */
+  display: block;
+}
+
+/* Tipografía bajo la foto */
+article.team h4{margin:10px 0 6px;font-weight:800}
+article.team small{color:#bfc3c9}
+
+/* =======================
+   Contacto y footer
+======================= */
+.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.contact-form label{display:block;margin-bottom:.75rem}
+.contact-form input,.contact-form textarea{
+  width:100%;padding:.65rem .8rem;border:1px solid var(--border);border-radius:10px;background:#1a1a1a;color:var(--text)
+}
+.contact-form button{
+  background:var(--surface-3);color:var(--text);border:1px solid var(--border);
+  padding:.75rem 1rem;border-radius:10px;cursor:pointer
+}
+.contact-form button:hover{background:#3d3d3d}
+.help{color:var(--muted)}
+.footer{background:#0a0a0a;color:#cfd3d8}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.footer a{color:#cfd3d8;text-decoration:none;margin-left:14px}
+
+/* =======================
+   WhatsApp flotante
+======================= */
+.whatsapp{position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--wa-green);box-shadow:0 12px 20px rgba(37,211,102,.25)}
+.whatsapp svg{width:32px;height:32px;fill:var(--wa-green)}
+.whatsapp circle{fill:var(--wa-dark)}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width:1100px){
+  #equipo .grid-3{grid-template-columns:repeat(2,minmax(260px,1fr))}
+}
+@media (max-width:980px){
+  .grid-3{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nav-toggle{display:block;margin-left:auto}
+  .menu{position:absolute;left:0;right:0;top:64px;background:var(--surface-1);border-top:1px solid var(--border);display:none}
+  .menu.open{display:block}
+  .menu ul{flex-direction:column;align-items:flex-start;padding:12px}
+  .dropdown{position:static;border:none;box-shadow:none;padding:0}
+  .has-dropdown .dropdown li a{padding:.6rem 0 .6rem .8rem}
+}
+@media (max-width:700px){
+  :root{ --portrait-w: 240px; }      /* ⟵ tamaño del retrato en móviles */
+  #equipo .grid-3{grid-template-columns:1fr}
+}
+/* ===== Equipo ===== */
+.team-grid { 
+  display: grid; 
+  gap: 2rem; 
+  grid-template-columns: repeat(3, minmax(220px, 1fr)); 
+}
+
+.portrait-card{
+  --w: 300px;
+  width: var(--w);
+  margin-inline: auto;
+  background: #0f0f0f;                   /* tarjeta oscura */
+  border: 1px solid #2b2b2b;             /* borde sutil */
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+
+/* Imagen SIN recorte: el marco se adapta a la foto */
+.portrait-card img{
+  width: 100%;
+  height: auto;                 /* ← no fuerzas altura */
+  display: block;
+  object-fit: contain;          /* ← muestra la foto completa */
+  background: #000;             /* bandas invisibles en tema oscuro */
+  border-radius: 12px;
+  /* importante: quita cualquier 'aspect-ratio' aquí */
+}
+
+
+/* Nombre y especialidad */
+.team-caption{ 
+  text-align: center; 
+  margin-top: 12px; 
+}
+
+.team-name{
+  display: block;
+  color: #e8e8e8;
+  font-weight: 700;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.2;
+}
+
+.team-role{
+  display: block;
+  color: #D4AF37;                         /* dorado corporativo */
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  opacity: .95;
+  font-size: clamp(.75rem, 1.3vw, .875rem);
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .team-grid{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+}
+@media (max-width: 640px){
+  .team-grid{ grid-template-columns: 1fr; }
+  .portrait-card{ --w: 92vw; }
+}
