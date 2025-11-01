@@ -270,10 +270,11 @@ article.team small{color:#bfc3c9}
 }
 .topbar-right {
   display: flex;
-  flex-direction: column;   /* vertical */
+  flex-direction: row;   /* ← ahora quedan en línea */
   gap: .6rem;
-  align-items: flex-end;
+  align-items: center;
 }
+
 
 .social-icon {
   width: 34px;
@@ -300,4 +301,5 @@ article.team small{color:#bfc3c9}
     align-items: center;
   }
 }
+
 
