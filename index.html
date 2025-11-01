@@ -4,15 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Asesoría Legal</title>
-  <meta name="description" content="Firma de abogados. Asesoramos con ética, calidad y resultados sostenibles.">
+  <meta name="description" content="Firma de abogados y contadores. Asesoramos con ética, calidad y resultados sostenibles.">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Topbar -->
   <div class="topbar">
     <div class="container topbar-inner">
-      <div class="topbar-left">  
-      </div>
+      <div class="topbar-left"></div>
       <div class="topbar-right">
         <a aria-label="Facebook" href="#" class="social">f</a>
         <a aria-label="Instagram" href="#" class="social">in</a>
@@ -34,31 +33,28 @@
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
 
       <nav class="menu" id="mainNav" aria-label="Principal">
-  <ul>
-    <a href="#inicio" class="logo" aria-label="LEGAL & TAXES">
-  <picture>
-    <!-- WebP que SÍ existen -->
-    <source
-      srcset="logo-gold.webp 1x, logo-gold@2x.webp 2x"
-      type="image/webp">
-    <!-- PNG que SÍ existen -->
-    <img
-      src="logo-gold.png"
-      srcset="logo-gold@2x.png 2x"
-      alt="LEGAL & TAXES — Logo"
-      class="logo-img"
-      width="120"
-      height="120">
-  </picture>
-</a>
-        <li class="has-dropdown">
+        <ul>
+          <a href="#inicio" class="logo" aria-label="LEGAL & TAXES">
+            <picture>
+              <source srcset="logo-gold.webp 1x, logo-gold@2x.webp 2x" type="image/webp">
+              <img
+                src="logo-gold.png"
+                srcset="logo-gold@2x.png 2x"
+                alt="LEGAL & TAXES — Logo"
+                class="logo-img"
+                width="120"
+                height="120">
+            </picture>
+          </a>
+
+          <li class="has-dropdown">
             <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false">
               Servicios y Asesoría
             </button>
             <ul class="dropdown">
-              <li><a href="#servicios">Compylance</a></li>
-              <li><a href="#servicios">Contratos y Negociación</a></li>
-              <li><a href="#servicios">Litigio Estratégico</a></li>
+              <li><a href="#servicios">Asesoría legal y contable</a></li>
+              <li><a href="#servicios">Contratos, facturación y nómina</a></li>
+              <li><a href="#servicios">Defensa fiscal / DIAN</a></li>
             </ul>
           </li>
 
@@ -68,8 +64,8 @@
             </button>
             <ul class="dropdown">
               <li><a href="#areas">Comercial & Corporativo</a></li>
+              <li><a href="#areas">Compliance y contabilidad</a></li>
               <li><a href="#areas">Derecho Tributario</a></li>
-              <li><a href="#areas">Procesos de Fiscalización</a></li>
             </ul>
           </li>
 
@@ -86,17 +82,14 @@
 
           <li><a href="#contacto">Contacto</a></li>
 
-          <li class="llamenos">
-         
-          </li>
+          <li class="llamenos"></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
-    <section id="inicio" class="hero" aria-label="Imagen institucional">
-    <!-- Video de fondo -->
+  <section id="inicio" class="hero" aria-label="Imagen institucional">
     <video class="hero-video"
             autoplay
             muted
@@ -104,30 +97,36 @@
             playsinline
             preload="auto"
             aria-hidden="true">
-        <source src="hero.mp4" type="video/mp4">
+      <source src="hero.mp4" type="video/mp4">
     </video>
 
-    <!-- Capa oscura para legibilidad -->
     <div class="hero-overlay"></div>
 
-    <!-- Contenido -->
     <div class="container hero-content">
-        <h1 class="hero-title">LEGAL &amp; TAXES</h1>
-        <p>Asesoramos y acompañamos en proyectos, procesos y consultorías, con ética, calidad y resultados sostenibles.</p>
-        <div class="hero-dots" aria-hidden="true"><span></span><span></span></div>
+      <h1 class="hero-title">LEGAL &amp; TAXES</h1>
+      <p>Asesoramos y acompañamos en proyectos, procesos y consultorías, con ética, calidad y resultados sostenibles.</p>
+      <div class="hero-dots" aria-hidden="true"><span></span><span></span></div>
     </div>
-    </section>
-
+  </section>
 
   <!-- Servicios -->
   <section id="servicios" class="section">
     <div class="container">
       <h2>Servicios y Asesoría</h2>
-      <p class="lead">Estructuramos y redactamos tus servicios con precisión jurídica y foco en resultados.</p>
+      <p class="lead">Estructuramos y redactamos tus servicios con precisión jurídica, contable y foco en resultados.</p>
       <div class="grid-3">
-        <article class="card"><h3>Asesoría Legal Integral</h3><p>Diagnóstico, estrategia y acompañamiento continuo.</p></article>
-        <article class="card"><h3>Contratos y Negociación</h3><p>Redacción y revisión contractual. Due diligence.</p></article>
-        <article class="card"><h3>Litigio Estratégico</h3><p>Prevención y solución efectiva de controversias.</p></article>
+        <article class="card">
+          <h3>Asesoría legal y contable integral</h3>
+          <p>Diagnóstico legal–tributario, organización de información y acompañamiento continuo para empresas y profesionales.</p>
+        </article>
+        <article class="card">
+          <h3>Contratos, facturación y nómina</h3>
+          <p>Redacción y revisión contractual, implementación de facturación electrónica y liquidación de nómina y seguridad social.</p>
+        </article>
+        <article class="card">
+          <h3>Defensa fiscal y DIAN</h3>
+          <p>Atención de requerimientos, fiscalización, información exógena y representación en vía administrativa.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -137,9 +136,18 @@
     <div class="container">
       <h2>Áreas de práctica</h2>
       <div class="grid-3">
-        <article class="pill"><h4>Comercial & Corporativo</h4><p>Gobierno corporativo, M&A, cumplimiento.</p></article>
-        <article class="pill"><h4>Compylance </h4><p>Impuestos</p></article>
-        <article class="pill"><h4>Derecho Tributario</h4><p>Procedimeintos fiscales y parafiscales.</p></article>
+        <article class="pill">
+          <h4>Comercial & Corporativo</h4>
+          <p>Constitución de sociedades, RUT, Cámara de Comercio, actas y soporte societario.</p>
+        </article>
+        <article class="pill">
+          <h4>Compliance y contabilidad</h4>
+          <p>Contabilidad NIIF, medios magnéticos, conciliación fiscal y control interno.</p>
+        </article>
+        <article class="pill">
+          <h4>Derecho Tributario</h4>
+          <p>Declaraciones (renta, IVA, retenciones) y planeación tributaria conforme a la normatividad vigente.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -152,62 +160,60 @@
     </div>
   </section>
 
-<!-- Equipo -->
-<section id="equipo" class="section alt">
-  <div class="container">
-    <h2>Equipo</h2>
-    <div class="grid-3">
+  <!-- Equipo -->
+  <section id="equipo" class="section alt">
+    <div class="container">
+      <h2>Equipo</h2>
+      <div class="grid-3">
 
-     <!-- Miembro 1 -->
-<article class="team">
-  <a class="team-link"
-     href="https://www.linkedin.com/in/yesica-ramirez"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Ver perfil de Jesica en LinkedIn"></a>
-    <figure class="portrait-card" style="--w:250px">
-      <img src="Yesica foto_final_negra_1.PNG" alt="">
-      <figcaption class="team-caption">
-        <span class="team-name">Yésica Ramírez</span>
-         <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
-      </figcaption>
-    </figure>
-  </a>
-</article>
+        <article class="team">
+          <a class="team-link"
+             href="https://www.linkedin.com/in/yesica-ramirez"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Ver perfil de Jesica en LinkedIn"></a>
+          <figure class="portrait-card" style="--w:250px">
+            <img src="Yesica foto_final_negra_1.PNG" alt="">
+            <figcaption class="team-caption">
+              <span class="team-name">Yésica Ramírez</span>
+              <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
+            </figcaption>
+          </figure>
+          </a>
+        </article>
 
-<article class="team">
-  <a class="team-link"
-     href="https://www.linkedin.com/in/jonatan-pinzon"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Ver perfil de Jonatan Pinzón en LinkedIn">
-    <figure class="portrait-card" style="--w:250px">
-      <img src="Jonathan foto_Negra-1.PNG" alt="">
-      <figcaption class="team-caption">
-        <span class="team-name">Jonatan Pinzón</span>
-        <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
-      </figcaption>
-    </figure>
-  </a>
-</article>
+        <article class="team">
+          <a class="team-link"
+             href="https://www.linkedin.com/in/jonatan-pinzon"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Ver perfil de Jonatan Pinzón en LinkedIn">
+            <figure class="portrait-card" style="--w:250px">
+              <img src="Jonathan foto_Negra-1.PNG" alt="">
+              <figcaption class="team-caption">
+                <span class="team-name">Jonatan Pinzón</span>
+                <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
+              </figcaption>
+            </figure>
+          </a>
+        </article>
 
-<!-- Miembro 3 -->
-<article class="team">
-  <a class="team-link"
-     href="https://www.linkedin.com/in/leydi-gomez"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Ver perfil de Leydi Gómez en LinkedIn">
-    <figure class="portrait-card" style="--w:250px">
-      <img src="Leydi foto_negra_1.PNG" alt="">
-      <figcaption class="team-caption">
-        <span class="team-name">Leydi Gómez</span>
-        <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
-      </figcaption>
-    </figure>
-  </a>
-</article>
- 
-</div>
-  </div>
-</section>
+        <article class="team">
+          <a class="team-link"
+             href="https://www.linkedin.com/in/leydi-gomez"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Ver perfil de Leydi Gómez en LinkedIn">
+            <figure class="portrait-card" style="--w:250px">
+              <img src="Leydi foto_negra_1.PNG" alt="">
+              <figcaption class="team-caption">
+                <span class="team-name">Leydi Gómez</span>
+                <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
+              </figcaption>
+            </figure>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
 
   <!-- Contacto -->
   <section id="contacto" class="section alt">
@@ -256,9 +262,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
- 
-
-
-
-
