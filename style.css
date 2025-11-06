@@ -325,6 +325,69 @@ article.team small{color:#bfc3c9}
   background:#d6a33d;
   color:#111;
 }
+/* ===== Modal perfiles equipo ===== */
+.profile-modal {
+  position: fixed;
+  inset: 0;
+  display: none;                     /* oculto por defecto */
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.profile-modal.open {
+  display: flex;                      /* se muestra cuando tiene la clase .open */
+}
+
+.profile-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.65);        /* fondo oscuro */
+}
+
+.profile-modal-dialog {
+  position: relative;
+  max-width: 540px;
+  width: 90%;
+  background: #151515;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.5);
+  padding: 1.75rem 1.75rem 1.5rem;
+  color: #f5f5f5;
+  z-index: 1;
+}
+
+.profile-modal-close {
+  position: absolute;
+  top: .6rem;
+  right: .8rem;
+  border: none;
+  background: transparent;
+  color: #f5f5f5;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.profile-modal-body h3 {
+  margin-top: 0;
+  margin-bottom: .35rem;
+  font-size: 1.3rem;
+  color: #d6a33d;
+}
+
+.profile-modal-body p {
+  margin-bottom: .6rem;
+  line-height: 1.5;
+}
+
+.profile-modal-body ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.profile-modal-body li {
+  margin-bottom: .3rem;
+}
 
 
 
