@@ -273,6 +273,24 @@ body{
   font-weight:600
 }
 
+/* ===== Cards en gris plata con relieve ===== */
+.card{
+  background:linear-gradient(145deg,#f5f5f5,#d4d4d4);  /* gris plata */
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow:
+    0 16px 28px rgba(0,0,0,.65),   /* relieve inferior */
+    0 0 0 1px rgba(0,0,0,.35);     /* contorno sutil */
+  color:#111;
+}
+.card h3,
+.card p,
+.card li{
+  color:#111;
+}
+.card ul{
+  padding-left:1.1rem;
+}
+
 /* =======================
    Equipo (sin tarjetas oscuras)
 ======================= */
@@ -563,7 +581,7 @@ article.team small{
 @media (max-width:768px){
   .topbar-right{
     flex-direction:row;
-    align-items:corner;
+    align-items:center;
   }
 }
 
@@ -646,4 +664,3 @@ article.team small{
 .profile-modal-body li{
   margin-bottom:.3rem;
 }
-
