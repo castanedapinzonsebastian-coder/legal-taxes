@@ -615,3 +615,19 @@ p{
     align-items:flex-start;
   }
 }
+/* ===== Overrides específicos para SERVICIOS ===== */
+#servicios .card{
+  background:#73777f !important;   /* gris marengo */
+  border:1px solid #f0f0f0;
+  color:#f5f5f5;
+}
+
+#servicios .card h3{
+  color:#ffffff !important;
+}
+
+#servicios .card p,
+#servicios .card li{
+  color:#f5f5f5 !important;
+}
+
