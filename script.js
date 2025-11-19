@@ -8,7 +8,7 @@ navToggle?.addEventListener('click', () => {
   mainNav.classList.toggle('open');
 });
 
-// Dropdowns por clic (robusto: button o anchor)
+// Dropdowns por clic (si en el futuro usas .has-dropdown)
 document.addEventListener('DOMContentLoaded', () => {
   const dropdowns = document.querySelectorAll('.has-dropdown');
 
@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       e.stopPropagation();
 
-      // Cierra otros abiertos
       dropdowns.forEach(other => {
         if (other !== item) {
           other.classList.remove('active');
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Cerrar al hacer clic fuera
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.has-dropdown')) {
       dropdowns.forEach(item => item.classList.remove('active'));
@@ -55,26 +53,24 @@ document.getElementById('btnEnviar')?.addEventListener('click', ()=>{
   }
   alert(`Gracias, ${nombre}. Te contactaremos a ${correo}.`);
 });
-// --- Modal perfiles equipo ---
+
+// Modal perfiles equipo
 document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('profileModal');
   const modalBody = document.getElementById('profileModalBody');
-  if (!modal || !modalBody) return; // por si la página no tiene sección equipo
+  if (!modal || !modalBody) return;
 
   const closeBtn = modal.querySelector('.profile-modal-close');
   const backdrop = modal.querySelector('.profile-modal-backdrop');
 
-  // Abrir modal al hacer clic en la tarjeta de retrato
   document.querySelectorAll('.portrait-card').forEach(card => {
     card.addEventListener('click', () => {
-      const id = card.dataset.person; // yesica / jonatan / leydi
+      const id = card.dataset.person;
       const content = document.getElementById('profile-' + id);
       if (!content) return;
 
-      // Insertar contenido del perfil oculto
       modalBody.innerHTML = content.innerHTML;
 
-      // Si tiene data-linkedin, crear botón
       const linkedinUrl = card.dataset.linkedin;
       if (linkedinUrl) {
         const link = document.createElement('a');
@@ -86,13 +82,11 @@ document.addEventListener('DOMContentLoaded', function () {
         modalBody.appendChild(link);
       }
 
-      // Mostrar modal
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
     });
   });
 
-  // Función para cerrar modal
   function closeModal() {
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
@@ -112,4 +106,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
