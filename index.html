@@ -10,260 +10,6 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Íconos redes -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-  <style>
-    /* ===== Cards gris marengo en Servicios ===== */
-        /* ===== Cards gris marengo en Servicios ===== */
-        /* ===== Estilo global para todas las CARDS ===== */
-    :root{
-      --marengo:#73777f;    /* gris de fondo de las cards */
-      /* el dorado del logo viene de style.css como --gold:#d6a33d */
-    }
-
-    /* Estado normal de cualquier .card dentro de una sección */
-    .section .card{
-      background:var(--marengo);                /* gris marengo */
-      border:none;                              /* sin marco blanco */
-      box-shadow:0 14px 32px rgba(0,0,0,.55);   /* efecto 3D / sombra */
-      transform:translateY(0);
-      transition:transform .18s ease,
-                 box-shadow .18s ease;
-    }
-
-    /* Efecto 3D al pasar el cursor por encima */
-    .section .card:hover{
-      transform:translateY(-4px);               /* se “levanta” */
-      box-shadow:0 20px 42px rgba(0,0,0,.75);   /* sombra más fuerte */
-    }
-
-    /* Texto dorado y en negrilla en todas las cards */
-    .section .card h3,
-    .section .card p,
-    .section .card li{
-      color:var(--gold);   /* mismo dorado del logo LEGAL & TAXES */
-      font-weight:600;     /* negrita. Si quieres más, cambia a 700 */
-    }
-
-    /* ajustes mínimos para el menú */
-    .header {
-      background:#121212;
-      position:sticky;
-      top:0;
-      z-index:999;
-    }
-    .nav {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:2rem;
-    }
-    .logo-img {
-      display:block;
-      height:62px;
-      width:auto;
-      object-fit:contain;
-    }
-    .menu ul {
-      display:flex;
-      gap:1.5rem;
-      align-items:center;
-    }
-    .menu a.nav-link {
-      color:#fff;
-      font-weight:300;
-      font-size:.9rem;
-      letter-spacing:.02em;
-      transition:.2s ease;
-      position:relative;
-      padding:.35rem .2rem;
-    }
-    .menu a.nav-link::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-.65rem;
-      width:0;
-      height:2px;
-      background:#d6a33d;
-      transition:.2s;
-    }
-    .menu a.nav-link:hover,
-    .menu a.nav-link.active{
-      color:#fff;
-    }
-    .menu a.nav-link:hover::after,
-    .menu a.nav-link.active::after{
-      width:100%;
-    }
-    /* redes top */
-    .topbar-right a.social {
-      width:30px;
-      height:30px;
-      border:1px solid rgba(255,255,255,.3);
-      border-radius:999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      font-size:.75rem;
-      transition:.2s;
-    }
-    .topbar-right a.social:hover{
-      background:#d6a33d;
-      border-color:#d6a33d;
-    }
-    /* responsive simple */
-    @media (max-width:900px){
-      .menu ul{flex-direction:column;align-items:flex-start;}
-    }
-
-    /* ajustes mínimos para el menú */
-    .header {
-      background:#121212;
-      position:sticky;
-      top:0;
-      z-index:999;
-    }
-    .nav {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:2rem;
-    }
-    .logo-img {
-      display:block;
-      height:62px;
-      width:auto;
-      object-fit:contain;
-    }
-    .menu ul {
-      display:flex;
-      gap:1.5rem;
-      align-items:center;
-    }
-    .menu a.nav-link {
-      color:#fff;
-      font-weight:300;
-      font-size:.9rem;
-      letter-spacing:.02em;
-      transition:.2s ease;
-      position:relative;
-      padding:.35rem .2rem;
-    }
-    .menu a.nav-link::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-.65rem;
-      width:0;
-      height:2px;
-      background:#d6a33d;
-      transition:.2s;
-    }
-    .menu a.nav-link:hover,
-    .menu a.nav-link.active{
-      color:#fff;
-    }
-    .menu a.nav-link:hover::after,
-    .menu a.nav-link.active::after{
-      width:100%;
-    }
-    /* redes top */
-    .topbar-right a.social {
-      width:30px;
-      height:30px;
-      border:1px solid rgba(255,255,255,.3);
-      border-radius:999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      font-size:.75rem;
-      transition:.2s;
-    }
-    .topbar-right a.social:hover{
-      background:#d6a33d;
-      border-color:#d6a33d;
-    }
-    /* responsive simple */
-    @media (max-width:900px){
-      .menu ul{flex-direction:column;align-items:flex-start;}
-    }
-
-
-    /* ajustes mínimos para el menú (override ligero sobre style.css) */
-    .header {
-      background:#121212;
-      position:sticky;
-      top:0;
-      z-index:999;
-    }
-    .nav {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:2rem;
-    }
-    .logo-img {
-      display:block;
-      height:62px;
-      width:auto;
-      object-fit:contain;
-    }
-    .menu ul {
-      display:flex;
-      gap:1.5rem;
-      align-items:center;
-    }
-    .menu a.nav-link {
-      color:#fff;
-      font-weight:300;
-      font-size:.9rem;
-      letter-spacing:.02em;
-      transition:.2s ease;
-      position:relative;
-      padding:.35rem .2rem;
-    }
-    .menu a.nav-link::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-.65rem;
-      width:0;
-      height:2px;
-      background:#d6a33d;
-      transition:.2s;
-    }
-    .menu a.nav-link:hover,
-    .menu a.nav-link.active{
-      color:#fff;
-    }
-    .menu a.nav-link:hover::after,
-    .menu a.nav-link.active::after{
-      width:100%;
-    }
-    /* redes top */
-    .topbar-right a.social {
-      width:30px;
-      height:30px;
-      border:1px solid rgba(255,255,255,.3);
-      border-radius:999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      font-size:.75rem;
-      transition:.2s;
-    }
-    .topbar-right a.social:hover{
-      background:#d6a33d;
-      border-color:#d6a33d;
-    }
-    /* responsive simple */
-    @media (max-width:900px){
-      .menu ul{flex-direction:column;align-items:flex-start;}
-    }
-  </style>
 </head>
 <body>
   <!-- TOPBAR -->
@@ -315,7 +61,7 @@
         <img src="logo-gold.png" srcset="logo-gold@2x.png 2x" alt="LEGAL & TAXES" class="logo-img">
       </a>
 
-      <!-- Botón mobile (si lo usas en tu script.js) -->
+      <!-- Botón mobile -->
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
 
       <!-- MENÚ -->
@@ -500,7 +246,6 @@
     <div class="container">
       <h2>La Firma</h2>
 
-      <!-- Quiénes somos -->
       <p>
         Somos una firma colombiana de servicios contables, jurídicos y empresariales que combina
         la experiencia profesional con la innovación tecnológica para ofrecer soluciones integrales
@@ -521,7 +266,6 @@
         relaciones sostenibles que impulsen la competitividad empresarial dentro y fuera de Colombia.
       </p>
 
-      <!-- Misión / Visión en dos columnas -->
       <div class="grid-3" style="grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px;">
         <article class="card">
           <h3>Misión</h3>
@@ -717,5 +461,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
