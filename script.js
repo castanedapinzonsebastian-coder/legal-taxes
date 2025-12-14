@@ -245,4 +245,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+// ===== Acordeón por sección (robusto) =====
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = document.querySelectorAll('.acc-toggle');
+
+  toggles.forEach((btn) => {
+    const panelId = btn.getAttribute('aria-controls');
+    const panel = panelId ? document.getElementById(panelId) : null;
+    const label = btn.querySelector('.acc-label');
+
+    if (!panel) {
+      console.warn('[ACORDEÓN] No encuentro el panel con id:', panelId);
+      return;
+    }
+
+    // Si el HTML trae hidden, asumimos cerrado; si no, abierto
+    const isInitiallyOpen = !panel.hasAttribute('hidden');
+    btn.setAttribute('aria-expanded', String(isInitiallyOpen));
+    if (label) label.textContent = isInitiallyOpen ? 'Ocultar' : 'Ver';
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      const next = !isOpen;
+
+      btn.setAttribute('aria-expanded', String(next));
+      if (label) label.textContent = next ? 'Ocultar' : 'Ver';
+
+      // Toggle real
+      if (next) panel.removeAttribute('hidden');
+      else panel.setAttribute('hidden', '');
+    });
+  });
+});
+
+
 
