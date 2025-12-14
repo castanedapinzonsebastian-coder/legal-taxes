@@ -296,11 +296,27 @@
       </div>
     </div>
   </section>
-
-  <!-- Equipo -->
-  <section id="equipo" class="section alt">
-    <div class="container">
+<!-- Equipo -->
+<section id="equipo" class="section alt">
+  <div class="container">
+    <div class="section-head">
       <h2>Equipo</h2>
+
+      <!-- Botón toggle -->
+      <button
+        id="equipoToggle"
+        class="section-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="equipoContent"
+      >
+        <span class="toggle-label">Ver equipo</span>
+        <span class="toggle-icon" aria-hidden="true">▾</span>
+      </button>
+    </div>
+
+    <!-- Contenedor colapsable -->
+    <div id="equipoContent" class="collapsible" hidden>
       <div class="grid-3">
         <!-- YÉSICA -->
         <article class="team">
@@ -371,7 +387,10 @@
         </article>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
 
   <!-- Modal perfil profesional -->
   <div id="profileModal" class="profile-modal" aria-hidden="true">
@@ -460,4 +479,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
