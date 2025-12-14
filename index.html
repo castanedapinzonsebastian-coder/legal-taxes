@@ -6,47 +6,26 @@
   <title>LEGAL & TAXES</title>
   <meta name="description" content="Firma LEGAL & TAXES. Asesoría legal, contable y tributaria.">
 
-  <!-- CSS principal -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Íconos redes -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
+
   <!-- TOPBAR -->
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left"></div>
       <div class="topbar-right">
-        <!-- Opcional: elimina las redes que no uses -->
-        <a href="https://www.facebook.com/tu_pagina" 
-           aria-label="Facebook" 
-           class="social" 
-           target="_blank" 
-           rel="noopener">
+        <a href="https://www.facebook.com/tu_pagina" aria-label="Facebook" class="social" target="_blank" rel="noopener">
           <i class="fab fa-facebook-f"></i>
         </a>
-
-        <a href="https://www.tiktok.com/@tu_usuario"
-           aria-label="TikTok"
-           class="social"
-           target="_blank"
-           rel="noopener">
+        <a href="https://www.tiktok.com/@tu_usuario" aria-label="TikTok" class="social" target="_blank" rel="noopener">
           <i class="fab fa-tiktok"></i>
         </a>
-        
-        <a href="https://www.instagram.com/legal_taxes_bogota/" 
-           aria-label="Instagram" 
-           class="social" 
-           target="_blank" 
-           rel="noopener">
+        <a href="https://www.instagram.com/legal_taxes_bogota/" aria-label="Instagram" class="social" target="_blank" rel="noopener">
           <i class="fab fa-instagram"></i>
         </a>
-
-        <a href="https://www.linkedin.com/in/legal-and-tax-evolution-sas-5b48a1397" 
-           aria-label="LinkedIn" 
-           class="social" 
-           target="_blank" 
-           rel="noopener">
+        <a href="https://www.linkedin.com/in/legal-and-tax-evolution-sas-5b48a1397" aria-label="LinkedIn" class="social" target="_blank" rel="noopener">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </div>
@@ -56,15 +35,12 @@
   <!-- Header / Navbar -->
   <header class="header">
     <div class="container nav">
-      <!-- LOGO -->
       <a href="#inicio" class="logo" aria-label="LEGAL & TAXES">
         <img src="logo-gold.png" srcset="logo-gold@2x.png 2x" alt="LEGAL & TAXES" class="logo-img">
       </a>
 
-      <!-- Botón mobile -->
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
 
-      <!-- MENÚ -->
       <nav class="menu" id="mainNav" aria-label="Principal">
         <ul>
           <li><a href="#servicios" class="nav-link">Servicios y Asesoría</a></li>
@@ -77,357 +53,342 @@
 
   <!-- Hero -->
   <section id="inicio" class="hero" aria-label="Imagen institucional">
-    <video class="hero-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto"
-            aria-hidden="true">
-        <source src="hero.mp4" type="video/mp4">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="hero.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-        <h1 class="hero-title">LEGAL &amp; TAXES</h1>
-        <p>Soluciones legales, contables y tributarias pensadas para empresas reales.</p>
-        <div class="hero-dots" aria-hidden="true"><span></span><span></span></div>
+      <h1 class="hero-title">LEGAL &amp; TAXES</h1>
+      <p>Soluciones legales, contables y tributarias pensadas para empresas reales.</p>
+      <div class="hero-dots" aria-hidden="true"><span></span><span></span></div>
     </div>
   </section>
 
-  <!-- Servicios -->
-  <section id="servicios" class="section">
+  <!-- SERVICIOS (ACORDEÓN) -->
+  <section id="servicios" class="section acc" data-acc-default="open">
     <div class="container">
-      <h2>Servicios y Asesoría</h2>
-      <p class="lead">
-        Integramos contabilidad, derecho tributario y tecnología para ofrecer soluciones prácticas,
-        medibles y alineadas con la realidad de tu negocio.
-      </p>
 
-      <div class="grid-3">
-        <!-- Derecho Tributario -->
-        <article class="card">
-          <h3>Derecho Tributario</h3>
-          <ul>
-            <li>Planeación tributaria nacional e internacional.</li>
-            <li>Asesoría en cumplimiento de obligaciones fiscales.</li>
-            <li>Representación ante la DIAN y autoridades tributarias.</li>
-            <li>Diagnóstico de riesgos y oportunidades fiscales.</li>
-            <li>Consultoría en reformas y actualización normativa.</li>
-          </ul>
-        </article>
-
-        <!-- Revisoría Fiscal -->
-        <article class="card">
-          <h3>Revisoría Fiscal</h3>
-          <ul>
-            <li>Verificación de información contable y financiera.</li>
-            <li>Control del cumplimiento legal, fiscal y administrativo.</li>
-            <li>Auditorías integrales e informes a órganos de control.</li>
-            <li>Evaluación de riesgos y recomendaciones preventivas.</li>
-            <li>Automatización de procesos de revisión con IA.</li>
-          </ul>
-        </article>
-
-        <!-- Auditoría Integral -->
-        <article class="card">
-          <h3>Auditoría Integral</h3>
-          <ul>
-            <li>Auditoría financiera, tributaria y de gestión.</li>
-            <li>Evaluación de control interno y eficiencia operativa.</li>
-            <li>Identificación de riesgos contables y fiscales.</li>
-            <li>Uso de herramientas tecnológicas para auditoría digital.</li>
-            <li>Informes con indicadores y acciones de mejora.</li>
-          </ul>
-        </article>
-
-        <!-- Contabilidad y Asesoría Financiera -->
-        <article class="card">
-          <h3>Contabilidad y Asesoría Financiera</h3>
-          <ul>
-            <li>Organización y digitalización contable.</li>
-            <li>Elaboración de estados financieros.</li>
-            <li>Implementación de NIIF y reportes ante la DIAN.</li>
-            <li>Análisis financiero y planeación presupuestal.</li>
-            <li>Acompañamiento en cierres contables y fiscales.</li>
-          </ul>
-        </article>
-
-        <!-- Contabilidad Automatizada e IA -->
-        <article class="card">
-          <h3>Contabilidad Automatizada e IA</h3>
-          <ul>
-            <li>Implementación de sistemas contables inteligentes.</li>
-            <li>Automatización de registros y conciliaciones.</li>
-            <li>Análisis predictivo y proyecciones financieras.</li>
-            <li>Integración de IA para control y seguimiento contable.</li>
-            <li>Reducción de errores y optimización de tiempos.</li>
-          </ul>
-        </article>
-
-        <!-- Capacitación Empresarial -->
-        <article class="card">
-          <h3>Capacitación Empresarial</h3>
-          <ul>
-            <li>Talleres sobre cumplimiento contable y fiscal.</li>
-            <li>Formación en herramientas contables automatizadas.</li>
-            <li>Capacitación a equipos contables y administrativos.</li>
-            <li>Actualización en normatividad tributaria y NIIF.</li>
-            <li>Entrenamientos presenciales y virtuales con enfoque práctico.</li>
-          </ul>
-        </article>
+      <div class="acc-head">
+        <h2>Servicios y Asesoría</h2>
+        <button class="acc-toggle" type="button" aria-expanded="true" aria-controls="panel-servicios">
+          <span class="acc-label">Ocultar</span>
+          <span class="acc-icon" aria-hidden="true">▾</span>
+        </button>
       </div>
-    </div>
-  </section>
-  
-  <!-- Por qué elegirnos -->
-  <section id="por-que-elegirnos" class="section alt">
-    <div class="container">
-      <h2>¿Por qué elegir LEGAL &amp; TAXES?</h2>
-      <p class="lead">
-        No solo cumplimos normas: diseñamos estructuras contables y tributarias más inteligentes,
-        apoyadas en tecnología e inteligencia artificial.
-      </p>
 
-      <div class="grid-3">
-        <article class="card">
-          <h3>Experiencia comprobada</h3>
-          <p>
-            Años de experiencia en asesoría contable, jurídica y tecnológica para empresas de
-            distintos sectores y tamaños.
-          </p>
-        </article>
+      <div id="panel-servicios" class="acc-panel">
+        <p class="lead">
+          Integramos contabilidad, derecho tributario y tecnología para ofrecer soluciones prácticas,
+          medibles y alineadas con la realidad de tu negocio.
+        </p>
 
-        <article class="card">
-          <h3>Tecnología e IA</h3>
-          <p>
-            Uso intensivo de automatización e inteligencia artificial para reducir errores,
-            acelerar procesos y mejorar la trazabilidad.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Equipo multidisciplinario</h3>
-          <p>
-            Contadores, auditores y abogados especializados que hablan el mismo idioma financiero y
-            jurídico de tu negocio.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Soluciones a la medida</h3>
-          <p>
-            Servicios personalizados diseñados según el nivel de madurez, riesgos y objetivos de tu
-            organización.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Alcance nacional e internacional</h3>
-          <p>
-            Acompañamiento a empresas locales y extranjeras con operaciones o inversiones en
-            Colombia.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Enfoque ético y orientado a resultados</h3>
-          <p>
-            Actuamos con rigor, transparencia y foco en indicadores claros: reducción de riesgos,
-            cumplimiento y eficiencia operativa.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- La Firma -->
-  <section id="firma" class="section">
-    <div class="container">
-      <h2>La Firma</h2>
-
-      <p>
-        Somos una firma colombiana de servicios contables, jurídicos y empresariales que combina
-        la experiencia profesional con la innovación tecnológica para ofrecer soluciones integrales
-        de alto impacto. Acompañamos a empresas, emprendedores y organizaciones en la gestión
-        eficiente de sus obligaciones financieras y legales, fortaleciendo su estructura y proyección
-        en los mercados donde operan.
-      </p>
-      <p>
-        Integramos sistemas inteligentes y herramientas basadas en inteligencia artificial que
-        optimizan procesos, mejoran la precisión contable y agilizan la toma de decisiones
-        estratégicas, transformando la información en conocimiento y el conocimiento en valor real
-        para nuestros clientes.
-      </p>
-      <p>
-        Contamos con un equipo multidisciplinario de contadores públicos, abogados y consultores
-        especializados, comprometidos con la ética, la excelencia y la confidencialidad. Nuestra
-        labor trasciende el cumplimiento normativo: buscamos generar confianza, crecimiento y
-        relaciones sostenibles que impulsen la competitividad empresarial dentro y fuera de Colombia.
-      </p>
-
-      <div class="grid-3" style="grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px;">
-        <article class="card">
-          <h3>Misión</h3>
-          <p>
-            Brindar soluciones integrales en contabilidad, derecho y gestión empresarial, impulsadas
-            por herramientas de sistematización e inteligencia artificial que optimizan procesos,
-            minimizan errores y facilitan la toma de decisiones.
-          </p>
-          <p>
-            Nuestro compromiso es acompañar a las empresas colombianas con servicios éticos,
-            confiables y personalizados, contribuyendo a su crecimiento sostenible y al cumplimiento
-            riguroso de las normas legales y financieras.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Visión</h3>
-          <p>
-            Ser una firma líder en asesoría contable, jurídica y tecnológica en Colombia, reconocida
-            por integrar la inteligencia artificial y la automatización como pilares de la eficiencia
-            y la transparencia empresarial.
-          </p>
-          <p>
-            Para el año 2030, consolidarnos como un aliado estratégico en la transformación digital
-            de las organizaciones, fortaleciendo su competitividad y su confianza en un entorno
-            económico y legal en constante evolución.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-<!-- Equipo -->
-<section id="equipo" class="section alt">
-  <div class="container">
-    <div class="section-head">
-      <h2>Equipo</h2>
-
-      <!-- Botón toggle -->
-      <button
-        id="equipoToggle"
-        class="section-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="equipoContent"
-      >
-        <span class="toggle-label">Ver equipo</span>
-        <span class="toggle-icon" aria-hidden="true">▾</span>
-      </button>
-    </div>
-
-    <!-- Contenedor colapsable -->
-    <div id="equipoContent" class="collapsible" hidden>
-      <div class="grid-3">
-        <!-- YÉSICA -->
-        <article class="team">
-          <figure class="portrait-card"
-                  style="--w:250px"
-                  data-person="yesica"
-                  data-linkedin="https://www.linkedin.com/in/yesica-ejemplo">
-            <img src="Yesica foto_final_negra_1.PNG" alt="Yésica Ramírez">
-            <figcaption class="team-caption">
-              <span class="team-name">Jessica Alejandra Navarro</span>
-              <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
-            </figcaption>
-          </figure>
-          <div id="profile-yesica" class="profile-data" hidden>
-            <h3>Jessica Alejandra Navarro</h3>
-            <p>Contadora Pública egresada de la Universidad CUN, con diplomado en NIIF de la Universidad del Rosario y especialización en Derecho Tributario de la Universidad Externado de Colombia.
-            <br><br>
-            Cuenta con experiencia en contabilidad y tributación de entidades sin ánimo de lucro, empresas del sector construcción y compañías comerciales.
-            <br><br>
-            Su práctica se centra en la elaboración de estados financieros bajo NIIF y en el cumplimiento eficiente y transparente de las obligaciones tributarias de las organizaciones.</p>
-          </div>
-        </article>
-
-        <!-- JONATAN -->
-        <article class="team">
-          <figure class="portrait-card"
-                  style="--w:250px"
-                  data-person="jonatan"
-                  data-linkedin="https://www.linkedin.com/in/jonatan-ejemplo">
-            <img src="Jonathan foto_Negra-1.PNG" alt="Jonatan Pinzón">
-            <figcaption class="team-caption">
-              <span class="team-name">Jonatan Pinzón</span>
-              <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
-            </figcaption>
-          </figure>
-          <div id="profile-jonatan" class="profile-data" hidden>
-            <h3>Jonatan Pinzón</h3>
-            <p>Abogado con enfoque en derecho tributario y empresarial, asesor de compañías en procesos de fiscalización y planeación fiscal.</p>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Derecho Tributario</h3>
             <ul>
-              <li>Litigio y defensa en vía gubernativa.</li>
-              <li>Estructuración de contratos comerciales.</li>
-              <li>Diseño de estrategias de reducción de sanciones.</li>
+              <li>Planeación tributaria nacional e internacional.</li>
+              <li>Asesoría en cumplimiento de obligaciones fiscales.</li>
+              <li>Representación ante la DIAN y autoridades tributarias.</li>
+              <li>Diagnóstico de riesgos y oportunidades fiscales.</li>
+              <li>Consultoría en reformas y actualización normativa.</li>
             </ul>
-          </div>
-        </article>
+          </article>
 
-        <!-- LEYDI -->
-        <article class="team">
-          <figure class="portrait-card"
-                  style="--w:250px"
-                  data-person="leydi"
-                  data-linkedin="https://www.linkedin.com/in/leydi-ejemplo">
-            <img src="Leydi foto_negra_1.PNG" alt="Leydi Gómez">
-            <figcaption class="team-caption">
-              <span class="team-name">Leydi Gómez</span>
-              <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
-            </figcaption>
-          </figure>
-          <div id="profile-leydi" class="profile-data" hidden>
-            <h3>Leydi Gómez</h3>
-            <p>Especialista en nómina, seguridad social y obligaciones laborales para empresas.</p>
+          <article class="card">
+            <h3>Revisoría Fiscal</h3>
             <ul>
-              <li>Configuración de nómina electrónica y PILA.</li>
-              <li>Gestión de prestaciones sociales y novedades.</li>
-              <li>Acompañamiento en inspecciones del Ministerio de Trabajo.</li>
+              <li>Verificación de información contable y financiera.</li>
+              <li>Control del cumplimiento legal, fiscal y administrativo.</li>
+              <li>Auditorías integrales e informes a órganos de control.</li>
+              <li>Evaluación de riesgos y recomendaciones preventivas.</li>
+              <li>Automatización de procesos de revisión con IA.</li>
             </ul>
-          </div>
-        </article>
+          </article>
+
+          <article class="card">
+            <h3>Auditoría Integral</h3>
+            <ul>
+              <li>Auditoría financiera, tributaria y de gestión.</li>
+              <li>Evaluación de control interno y eficiencia operativa.</li>
+              <li>Identificación de riesgos contables y fiscales.</li>
+              <li>Uso de herramientas tecnológicas para auditoría digital.</li>
+              <li>Informes con indicadores y acciones de mejora.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Contabilidad y Asesoría Financiera</h3>
+            <ul>
+              <li>Organización y digitalización contable.</li>
+              <li>Elaboración de estados financieros.</li>
+              <li>Implementación de NIIF y reportes ante la DIAN.</li>
+              <li>Análisis financiero y planeación presupuestal.</li>
+              <li>Acompañamiento en cierres contables y fiscales.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Contabilidad Automatizada e IA</h3>
+            <ul>
+              <li>Implementación de sistemas contables inteligentes.</li>
+              <li>Automatización de registros y conciliaciones.</li>
+              <li>Análisis predictivo y proyecciones financieras.</li>
+              <li>Integración de IA para control y seguimiento contable.</li>
+              <li>Reducción de errores y optimización de tiempos.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Capacitación Empresarial</h3>
+            <ul>
+              <li>Talleres sobre cumplimiento contable y fiscal.</li>
+              <li>Formación en herramientas contables automatizadas.</li>
+              <li>Capacitación a equipos contables y administrativos.</li>
+              <li>Actualización en normatividad tributaria y NIIF.</li>
+              <li>Entrenamientos presenciales y virtuales con enfoque práctico.</li>
+            </ul>
+          </article>
+        </div>
       </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- POR QUÉ ELEGIRNOS (ACORDEÓN) -->
+  <section id="por-que-elegirnos" class="section alt acc">
+    <div class="container">
 
+      <div class="acc-head">
+        <h2>¿Por qué elegir LEGAL &amp; TAXES?</h2>
+        <button class="acc-toggle" type="button" aria-expanded="false" aria-controls="panel-porque">
+          <span class="acc-label">Ver</span>
+          <span class="acc-icon" aria-hidden="true">▾</span>
+        </button>
+      </div>
+
+      <div id="panel-porque" class="acc-panel" hidden>
+        <p class="lead">
+          No solo cumplimos normas: diseñamos estructuras contables y tributarias más inteligentes,
+          apoyadas en tecnología e inteligencia artificial.
+        </p>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Experiencia comprobada</h3>
+            <p>Años de experiencia en asesoría contable, jurídica y tecnológica para empresas de distintos sectores y tamaños.</p>
+          </article>
+          <article class="card">
+            <h3>Tecnología e IA</h3>
+            <p>Uso intensivo de automatización e inteligencia artificial para reducir errores, acelerar procesos y mejorar la trazabilidad.</p>
+          </article>
+          <article class="card">
+            <h3>Equipo multidisciplinario</h3>
+            <p>Contadores, auditores y abogados especializados que hablan el mismo idioma financiero y jurídico de tu negocio.</p>
+          </article>
+          <article class="card">
+            <h3>Soluciones a la medida</h3>
+            <p>Servicios personalizados diseñados según el nivel de madurez, riesgos y objetivos de tu organización.</p>
+          </article>
+          <article class="card">
+            <h3>Alcance nacional e internacional</h3>
+            <p>Acompañamiento a empresas locales y extranjeras con operaciones o inversiones en Colombia.</p>
+          </article>
+          <article class="card">
+            <h3>Enfoque ético y orientado a resultados</h3>
+            <p>Actuamos con rigor, transparencia y foco en indicadores claros: reducción de riesgos, cumplimiento y eficiencia operativa.</p>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LA FIRMA (ACORDEÓN) -->
+  <section id="firma" class="section acc">
+    <div class="container">
+
+      <div class="acc-head">
+        <h2>La Firma</h2>
+        <button class="acc-toggle" type="button" aria-expanded="false" aria-controls="panel-firma">
+          <span class="acc-label">Ver</span>
+          <span class="acc-icon" aria-hidden="true">▾</span>
+        </button>
+      </div>
+
+      <div id="panel-firma" class="acc-panel" hidden>
+        <p>
+          Somos una firma colombiana de servicios contables, jurídicos y empresariales que combina
+          la experiencia profesional con la innovación tecnológica para ofrecer soluciones integrales
+          de alto impacto. Acompañamos a empresas, emprendedores y organizaciones en la gestión
+          eficiente de sus obligaciones financieras y legales, fortaleciendo su estructura y proyección
+          en los mercados donde operan.
+        </p>
+        <p>
+          Integramos sistemas inteligentes y herramientas basadas en inteligencia artificial que
+          optimizan procesos, mejoran la precisión contable y agilizan la toma de decisiones
+          estratégicas, transformando la información en conocimiento y el conocimiento en valor real
+          para nuestros clientes.
+        </p>
+        <p>
+          Contamos con un equipo multidisciplinario de contadores públicos, abogados y consultores
+          especializados, comprometidos con la ética, la excelencia y la confidencialidad. Nuestra
+          labor trasciende el cumplimiento normativo: buscamos generar confianza, crecimiento y
+          relaciones sostenibles que impulsen la competitividad empresarial dentro y fuera de Colombia.
+        </p>
+
+        <div class="grid-3" style="grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px;">
+          <article class="card">
+            <h3>Misión</h3>
+            <p>
+              Brindar soluciones integrales en contabilidad, derecho y gestión empresarial, impulsadas
+              por herramientas de sistematización e inteligencia artificial que optimizan procesos,
+              minimizan errores y facilitan la toma de decisiones.
+            </p>
+            <p>
+              Nuestro compromiso es acompañar a las empresas colombianas con servicios éticos,
+              confiables y personalizados, contribuyendo a su crecimiento sostenible y al cumplimiento
+              riguroso de las normas legales y financieras.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Visión</h3>
+            <p>
+              Ser una firma líder en asesoría contable, jurídica y tecnológica en Colombia, reconocida
+              por integrar la inteligencia artificial y la automatización como pilares de la eficiencia
+              y la transparencia empresarial.
+            </p>
+            <p>
+              Para el año 2030, consolidarnos como un aliado estratégico en la transformación digital
+              de las organizaciones, fortaleciendo su competitividad y su confianza en un entorno
+              económico y legal en constante evolución.
+            </p>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EQUIPO (ACORDEÓN) -->
+  <section id="equipo" class="section alt acc">
+    <div class="container">
+
+      <div class="acc-head">
+        <h2>Equipo</h2>
+        <button class="acc-toggle" type="button" aria-expanded="false" aria-controls="panel-equipo">
+          <span class="acc-label">Ver</span>
+          <span class="acc-icon" aria-hidden="true">▾</span>
+        </button>
+      </div>
+
+      <div id="panel-equipo" class="acc-panel" hidden>
+        <div class="grid-3">
+          <article class="team">
+            <figure class="portrait-card" style="--w:250px" data-person="yesica" data-linkedin="https://www.linkedin.com/in/yesica-ejemplo">
+              <img src="Yesica foto_final_negra_1.PNG" alt="Yésica Ramírez">
+              <figcaption class="team-caption">
+                <span class="team-name">Jessica Alejandra Navarro</span>
+                <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
+              </figcaption>
+            </figure>
+            <div id="profile-yesica" class="profile-data" hidden>
+              <h3>Jessica Alejandra Navarro</h3>
+              <p>Contadora Pública egresada de la Universidad CUN, con diplomado en NIIF de la Universidad del Rosario y especialización en Derecho Tributario de la Universidad Externado de Colombia.
+              <br><br>Cuenta con experiencia en contabilidad y tributación de entidades sin ánimo de lucro, empresas del sector construcción y compañías comerciales.
+              <br><br>Su práctica se centra en la elaboración de estados financieros bajo NIIF y en el cumplimiento eficiente y transparente de las obligaciones tributarias de las organizaciones.</p>
+            </div>
+          </article>
+
+          <article class="team">
+            <figure class="portrait-card" style="--w:250px" data-person="jonatan" data-linkedin="https://www.linkedin.com/in/jonatan-ejemplo">
+              <img src="Jonathan foto_Negra-1.PNG" alt="Jonatan Pinzón">
+              <figcaption class="team-caption">
+                <span class="team-name">Jonatan Pinzón</span>
+                <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
+              </figcaption>
+            </figure>
+            <div id="profile-jonatan" class="profile-data" hidden>
+              <h3>Jonatan Pinzón</h3>
+              <p>Abogado con enfoque en derecho tributario y empresarial, asesor de compañías en procesos de fiscalización y planeación fiscal.</p>
+              <ul>
+                <li>Litigio y defensa en vía gubernativa.</li>
+                <li>Estructuración de contratos comerciales.</li>
+                <li>Diseño de estrategias de reducción de sanciones.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="team">
+            <figure class="portrait-card" style="--w:250px" data-person="leydi" data-linkedin="https://www.linkedin.com/in/leydi-ejemplo">
+              <img src="Leydi foto_negra_1.PNG" alt="Leydi Gómez">
+              <figcaption class="team-caption">
+                <span class="team-name">Leydi Gómez</span>
+                <span class="team-cta" aria-hidden="true">Ver perfil ↗</span>
+              </figcaption>
+            </figure>
+            <div id="profile-leydi" class="profile-data" hidden>
+              <h3>Leydi Gómez</h3>
+              <p>Especialista en nómina, seguridad social y obligaciones laborales para empresas.</p>
+              <ul>
+                <li>Configuración de nómina electrónica y PILA.</li>
+                <li>Gestión de prestaciones sociales y novedades.</li>
+                <li>Acompañamiento en inspecciones del Ministerio de Trabajo.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- Modal perfil profesional -->
   <div id="profileModal" class="profile-modal" aria-hidden="true">
     <div class="profile-modal-backdrop"></div>
     <div class="profile-modal-dialog" role="dialog" aria-modal="true">
       <button class="profile-modal-close" aria-label="Cerrar perfil">&times;</button>
-      <div id="profileModalBody" class="profile-modal-body">
-        <!-- Aquí se inyecta el contenido del perfil -->
-      </div>
+      <div id="profileModalBody" class="profile-modal-body"></div>
     </div>
   </div>
 
-  <!-- Contacto -->
-  <section id="contacto" class="section alt">
+  <!-- CONTACTO (ACORDEÓN) -->
+  <section id="contacto" class="section alt acc">
     <div class="container">
-      <h2>Contacto</h2>
-      <div class="contact-grid">
-        <form class="contact-form" onsubmit="return false;">
-          <label>Nombre
-            <input type="text" id="nombre" placeholder="Tu nombre" required>
-          </label>
-          <label>Correo
-            <input type="email" id="correo" placeholder="tu@correo.com" required>
-          </label>
-          <label>Mensaje
-            <textarea id="mensaje" rows="4" placeholder="Cuéntanos tu caso" required></textarea>
-          </label>
-          <button id="btnEnviar">Enviar mensaje</button>
-          <small class="help">También puedes escribirnos por WhatsApp → botón flotante.</small>
-        </form>
-        <div class="contact-info">
-          <p>📍 Bogotá, Colombia</p>
-          <p>📞 <a href="tel:+576014326648">(601) 4326648</a></p>
-          <p>✉️ <a href="mailto:contacto@tuempresa.com">contacto@tuempresa.com</a></p>
-          <p>🕘 Lun–Vie: 8:00–17:00</p>
+
+      <div class="acc-head">
+        <h2>Contacto</h2>
+        <button class="acc-toggle" type="button" aria-expanded="false" aria-controls="panel-contacto">
+          <span class="acc-label">Ver</span>
+          <span class="acc-icon" aria-hidden="true">▾</span>
+        </button>
+      </div>
+
+      <div id="panel-contacto" class="acc-panel" hidden>
+        <div class="contact-grid">
+          <form class="contact-form" onsubmit="return false;">
+            <label>Nombre
+              <input type="text" id="nombre" placeholder="Tu nombre" required>
+            </label>
+            <label>Correo
+              <input type="email" id="correo" placeholder="tu@correo.com" required>
+            </label>
+            <label>Mensaje
+              <textarea id="mensaje" rows="4" placeholder="Cuéntanos tu caso" required></textarea>
+            </label>
+            <button id="btnEnviar">Enviar mensaje</button>
+            <small class="help">También puedes escribirnos por WhatsApp → botón flotante.</small>
+          </form>
+
+          <div class="contact-info">
+            <p>📍 Bogotá, Colombia</p>
+            <p>📞 <a href="tel:+576014326648">(601) 4326648</a></p>
+            <p>✉️ <a href="mailto:contacto@tuempresa.com">contacto@tuempresa.com</a></p>
+            <p>🕘 Lun–Vie: 8:00–17:00</p>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -443,7 +404,6 @@
     </div>
   </footer>
 
-  <!-- Botón flotante WhatsApp -->
   <a class="whatsapp" href="https://wa.me/573204451658?text=Hola,%20quisiera%20asesoría" target="_blank" rel="noopener" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -452,7 +412,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // scroll suave
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
         const id = a.getAttribute('href');
@@ -463,7 +422,6 @@
       });
     });
 
-    // marcar activo
     const links = document.querySelectorAll('.nav-link');
     const sections = [...links].map(l => document.querySelector(l.getAttribute('href')));
     window.addEventListener('scroll', () => {
@@ -476,8 +434,7 @@
       });
     });
   </script>
+
   <script src="script.js"></script>
 </body>
 </html>
-
-
