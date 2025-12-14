@@ -662,3 +662,47 @@ p{
     align-items:flex-start;
   }
 }
+
+/* ==========================
+   ACORDEÓN POR SECCIÓN
+========================== */
+.acc-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.acc-toggle{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  background:rgba(244,196,77,.10);
+  border:1px solid rgba(244,196,77,.55);
+  color:var(--gold);
+  font-weight:600;
+  letter-spacing:.04em;
+  transition:transform .18s ease, filter .18s ease;
+}
+
+.acc-toggle:hover{
+  filter:brightness(1.08);
+  transform:translateY(-1px);
+}
+
+.acc-icon{
+  display:inline-block;
+  transition:transform .18s ease;
+}
+
+.acc-toggle[aria-expanded="true"] .acc-icon{
+  transform:rotate(180deg);
+}
+
+.acc-panel{
+  margin-top:18px;
+}
+
