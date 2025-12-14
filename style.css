@@ -706,3 +706,39 @@ p{
   margin-top:18px;
 }
 
+// Acordeón por sección (botón "Ver")
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.acc-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const panelId = btn.getAttribute('aria-controls');
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (!panel) return;
+
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Toggle accesible
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      panel.hidden = isOpen;
+
+      // Texto del botón
+      const label = btn.querySelector('.acc-label');
+      if (label) label.textContent = isOpen ? 'Ver' : 'Ocultar';
+    });
+  });
+
+  // (Opcional) abrir por defecto secciones con data-acc-default="open"
+  document.querySelectorAll('.acc[data-acc-default="open"]').forEach((sec) => {
+    const btn = sec.querySelector('.acc-toggle');
+    if (!btn) return;
+    const panelId = btn.getAttribute('aria-controls');
+    const panel = panelId ? document.getElementById(panelId) : null;
+    if (!panel) return;
+
+    btn.setAttribute('aria-expanded', 'true');
+    panel.hidden = false;
+
+    const label = btn.querySelector('.acc-label');
+    if (label) label.textContent = 'Ocultar';
+  });
+});
+
