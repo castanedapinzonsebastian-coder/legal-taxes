@@ -219,3 +219,30 @@ document.addEventListener('DOMContentLoaded', function () {
   transform:rotate(180deg);
 }
 
+// ===== Acordeón por sección =====
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.acc').forEach(section => {
+    const btn = section.querySelector('.acc-toggle');
+    const panelId = btn?.getAttribute('aria-controls');
+    const panel = panelId ? document.getElementById(panelId) : null;
+    const label = btn?.querySelector('.acc-label');
+
+    if (!btn || !panel) return;
+
+    // Estado inicial
+    const defaultOpen = section.dataset.accDefault === 'open';
+    btn.setAttribute('aria-expanded', String(defaultOpen));
+    if (label) label.textContent = defaultOpen ? 'Ocultar' : 'Ver';
+    panel.hidden = !defaultOpen;
+
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      const next = !isOpen;
+
+      btn.setAttribute('aria-expanded', String(next));
+      if (label) label.textContent = next ? 'Ocultar' : 'Ver';
+      panel.hidden = !next;
+    });
+  });
+});
+
