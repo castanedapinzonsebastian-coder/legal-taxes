@@ -1,17 +1,17 @@
-// Año dinámico
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Menú móvil
-const navToggle = document.getElementById('navToggle');
-const mainNav   = document.getElementById('mainNav');
-navToggle?.addEventListener('click', () => {
-  mainNav.classList.toggle('open');
-});
-
-// Dropdowns por clic (si en el futuro usas .has-dropdown)
 document.addEventListener('DOMContentLoaded', () => {
-  const dropdowns = document.querySelectorAll('.has-dropdown');
+  // Año dinámico
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
 
+  // Menú móvil
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
+  }
+
+  // Dropdowns por clic (si en el futuro usas .has-dropdown)
+  const dropdowns = document.querySelectorAll('.has-dropdown');
   dropdowns.forEach(item => {
     const btn = item.querySelector('.dropdown-btn') || item.querySelector(':scope > a');
     if (!btn) return;
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (other !== item) {
           other.classList.remove('active');
           const ob = other.querySelector('.dropdown-btn') || other.querySelector(':scope > a');
-          ob?.setAttribute('aria-expanded','false');
+          ob?.setAttribute('aria-expanded', 'false');
         }
       });
 
@@ -37,219 +37,71 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!e.target.closest('.has-dropdown')) {
       dropdowns.forEach(item => item.classList.remove('active'));
       document.querySelectorAll('.dropdown-btn[aria-expanded="true"]')
-        .forEach(b => b.setAttribute('aria-expanded','false'));
+        .forEach(b => b.setAttribute('aria-expanded', 'false'));
     }
   });
-});
 
-// Simulación de envío de formulario
-document.getElementById('btnEnviar')?.addEventListener('click', ()=>{
-  const nombre = document.getElementById('nombre').value.trim();
-  const correo = document.getElementById('correo').value.trim();
-  const msj    = document.getElementById('mensaje').value.trim();
-  if(!nombre || !correo || !msj){
-    alert('Por favor completa todos los campos.');
-    return;
-  }
-  alert(`Gracias, ${nombre}. Te contactaremos a ${correo}.`);
-});
+  // Formulario (simulación)
+  const btnEnviar = document.getElementById('btnEnviar');
+  btnEnviar?.addEventListener('click', () => {
+    const nombre = document.getElementById('nombre')?.value?.trim() || '';
+    const correo = document.getElementById('correo')?.value?.trim() || '';
+    const msj = document.getElementById('mensaje')?.value?.trim() || '';
 
-// Modal perfiles equipo
-document.addEventListener('DOMContentLoaded', function () {
+    if (!nombre || !correo || !msj) {
+      alert('Por favor completa todos los campos.');
+      return;
+    }
+    alert(`Gracias, ${nombre}. Te contactaremos a ${correo}.`);
+  });
+
+  // Modal perfiles equipo
   const modal = document.getElementById('profileModal');
   const modalBody = document.getElementById('profileModalBody');
-  if (!modal || !modalBody) return;
+  if (modal && modalBody) {
+    const closeBtn = modal.querySelector('.profile-modal-close');
+    const backdrop = modal.querySelector('.profile-modal-backdrop');
 
-  const closeBtn = modal.querySelector('.profile-modal-close');
-  const backdrop = modal.querySelector('.profile-modal-backdrop');
+    document.querySelectorAll('.portrait-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const id = card.dataset.person;
+        const content = document.getElementById('profile-' + id);
+        if (!content) return;
 
-  document.querySelectorAll('.portrait-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const id = card.dataset.person;
-      const content = document.getElementById('profile-' + id);
-      if (!content) return;
+        modalBody.innerHTML = content.innerHTML;
 
-      modalBody.innerHTML = content.innerHTML;
+        const linkedinUrl = card.dataset.linkedin;
+        if (linkedinUrl) {
+          const link = document.createElement('a');
+          link.href = linkedinUrl;
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.className = 'profile-linkedin';
+          link.innerHTML = '<i class="fab fa-linkedin-in"></i> Ver perfil completo en LinkedIn';
+          modalBody.appendChild(link);
+        }
 
-      const linkedinUrl = card.dataset.linkedin;
-      if (linkedinUrl) {
-        const link = document.createElement('a');
-        link.href = linkedinUrl;
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.className = 'profile-linkedin';
-        link.innerHTML = '<i class="fab fa-linkedin-in"></i> Ver perfil completo en LinkedIn';
-        modalBody.appendChild(link);
-      }
-
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      });
     });
-  });
 
-  function closeModal() {
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden', 'true');
-    modalBody.innerHTML = '';
-  }
+    const closeModal = () => {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalBody.innerHTML = '';
+    };
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
-  if (backdrop) {
-    backdrop.addEventListener('click', closeModal);
-  }
+    closeBtn?.addEventListener('click', closeModal);
+    backdrop?.addEventListener('click', closeModal);
 
-  window.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) {
-      closeModal();
-    }
-  });
-});
-/* ==========================
-   COLAPSABLE: EQUIPO
-========================== */
-.section-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-
-.section-toggle{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 14px;
-  border-radius:999px;
-  cursor:pointer;
-  background:rgba(244,196,77,.10);
-  border:1px solid rgba(244,196,77,.55);
-  color:var(--gold);
-  font-weight:600;
-  letter-spacing:.04em;
-  transition:transform .18s ease, filter .18s ease, background .18s ease;
-}
-
-.section-toggle:hover{
-  filter:brightness(1.1);
-  transform:translateY(-1px);
-}
-
-.toggle-icon{
-  display:inline-block;
-  transition:transform .18s ease;
-}
-
-/* Animación (sin hacks raros) */
-.collapsible{
-  overflow:hidden;
-  transition:max-height .28s ease, opacity .20s ease;
-  opacity:1;
-  max-height:2000px; /* “suficiente” para el contenido */
-  margin-top:18px;
-}
-
-.collapsible[hidden]{
-  display:block;     /* para permitir animación */
-  max-height:0;
-  opacity:0;
-  margin-top:0;
-  pointer-events:none;
-}
-
-/* Estado abierto del botón */
-.section-toggle[aria-expanded="true"] .toggle-icon{
-  transform:rotate(180deg);
-}
-/* ==========================
-   COLAPSABLE: EQUIPO
-========================== */
-.section-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-
-.section-toggle{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 14px;
-  border-radius:999px;
-  cursor:pointer;
-  background:rgba(244,196,77,.10);
-  border:1px solid rgba(244,196,77,.55);
-  color:var(--gold);
-  font-weight:600;
-  letter-spacing:.04em;
-  transition:transform .18s ease, filter .18s ease, background .18s ease;
-}
-
-.section-toggle:hover{
-  filter:brightness(1.1);
-  transform:translateY(-1px);
-}
-
-.toggle-icon{
-  display:inline-block;
-  transition:transform .18s ease;
-}
-
-/* Animación (sin hacks raros) */
-.collapsible{
-  overflow:hidden;
-  transition:max-height .28s ease, opacity .20s ease;
-  opacity:1;
-  max-height:2000px; /* “suficiente” para el contenido */
-  margin-top:18px;
-}
-
-.collapsible[hidden]{
-  display:block;     /* para permitir animación */
-  max-height:0;
-  opacity:0;
-  margin-top:0;
-  pointer-events:none;
-}
-
-/* Estado abierto del botón */
-.section-toggle[aria-expanded="true"] .toggle-icon{
-  transform:rotate(180deg);
-}
-
-// ===== Acordeón por sección =====
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.acc').forEach(section => {
-    const btn = section.querySelector('.acc-toggle');
-    const panelId = btn?.getAttribute('aria-controls');
-    const panel = panelId ? document.getElementById(panelId) : null;
-    const label = btn?.querySelector('.acc-label');
-
-    if (!btn || !panel) return;
-
-    // Estado inicial
-    const defaultOpen = section.dataset.accDefault === 'open';
-    btn.setAttribute('aria-expanded', String(defaultOpen));
-    if (label) label.textContent = defaultOpen ? 'Ocultar' : 'Ver';
-    panel.hidden = !defaultOpen;
-
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      const next = !isOpen;
-
-      btn.setAttribute('aria-expanded', String(next));
-      if (label) label.textContent = next ? 'Ocultar' : 'Ver';
-      panel.hidden = !next;
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
-  });
-});
-// ===== Acordeón por sección (robusto) =====
-document.addEventListener('DOMContentLoaded', () => {
-  const toggles = document.querySelectorAll('.acc-toggle');
+  }
 
-  toggles.forEach((btn) => {
+  // ===== Acordeón por sección (ÚNICO, robusto) =====
+  document.querySelectorAll('.acc-toggle').forEach((btn) => {
     const panelId = btn.getAttribute('aria-controls');
     const panel = panelId ? document.getElementById(panelId) : null;
     const label = btn.querySelector('.acc-label');
@@ -259,26 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Si el HTML trae hidden, asumimos cerrado; si no, abierto
-    const isInitiallyOpen = !panel.hasAttribute('hidden');
-    btn.setAttribute('aria-expanded', String(isInitiallyOpen));
-    if (label) label.textContent = isInitiallyOpen ? 'Ocultar' : 'Ver';
+    // estado inicial según el HTML (hidden = cerrado)
+    const isOpen = !panel.hasAttribute('hidden');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    if (label) label.textContent = isOpen ? 'Ocultar' : 'Ver';
 
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      const nowOpen = btn.getAttribute('aria-expanded') !== 'true';
 
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      const next = !isOpen;
+      btn.setAttribute('aria-expanded', String(nowOpen));
+      if (label) label.textContent = nowOpen ? 'Ocultar' : 'Ver';
 
-      btn.setAttribute('aria-expanded', String(next));
-      if (label) label.textContent = next ? 'Ocultar' : 'Ver';
-
-      // Toggle real
-      if (next) panel.removeAttribute('hidden');
+      if (nowOpen) panel.removeAttribute('hidden');
       else panel.setAttribute('hidden', '');
     });
   });
+
 });
-
-
-
