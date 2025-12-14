@@ -162,3 +162,60 @@ document.addEventListener('DOMContentLoaded', function () {
 .section-toggle[aria-expanded="true"] .toggle-icon{
   transform:rotate(180deg);
 }
+/* ==========================
+   COLAPSABLE: EQUIPO
+========================== */
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.section-toggle{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  background:rgba(244,196,77,.10);
+  border:1px solid rgba(244,196,77,.55);
+  color:var(--gold);
+  font-weight:600;
+  letter-spacing:.04em;
+  transition:transform .18s ease, filter .18s ease, background .18s ease;
+}
+
+.section-toggle:hover{
+  filter:brightness(1.1);
+  transform:translateY(-1px);
+}
+
+.toggle-icon{
+  display:inline-block;
+  transition:transform .18s ease;
+}
+
+/* Animación (sin hacks raros) */
+.collapsible{
+  overflow:hidden;
+  transition:max-height .28s ease, opacity .20s ease;
+  opacity:1;
+  max-height:2000px; /* “suficiente” para el contenido */
+  margin-top:18px;
+}
+
+.collapsible[hidden]{
+  display:block;     /* para permitir animación */
+  max-height:0;
+  opacity:0;
+  margin-top:0;
+  pointer-events:none;
+}
+
+/* Estado abierto del botón */
+.section-toggle[aria-expanded="true"] .toggle-icon{
+  transform:rotate(180deg);
+}
+
